@@ -1,18 +1,21 @@
-import
-  {
-    Paper,
-    Table,
-    TableBody,
-    TableCell,
-    TableContainer,
-    TableHead,
-    TableRow
-  } from "@mui/material";
+import {
+  Paper,
+  Table,
+  TableBody,
+  TableCell,
+  TableContainer,
+  TableHead,
+  TableRow,
+  Typography,
+} from "@mui/material";
 import { IStudentsProps } from "../../types/interfaces";
-
-export const Students: React.FC<IStudentsProps> = ({rows, columns}) => {
+import styles from "./styles.module.scss";
+export const Students: React.FC<IStudentsProps> = ({ rows, columns }) => {
   return (
-    <div className="container">
+    <div className={styles["container"]}>
+      <Typography variant="h1" component="h2">
+        Students
+      </Typography>
       <Paper sx={{ width: "100%", overflow: "hidden" }}>
         <TableContainer sx={{ maxHeight: 440 }}>
           <Table stickyHeader aria-label="sticky table">
@@ -32,7 +35,13 @@ export const Students: React.FC<IStudentsProps> = ({rows, columns}) => {
             <TableBody>
               {rows.map((row) => {
                 return (
-                  <TableRow hover role="checkbox" tabIndex={-1} key={row.code}>
+                  <TableRow
+                    hover
+                    role="checkbox"
+                    tabIndex={-1}
+                    key={row.code}
+                    sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
+                  >
                     {columns.map((column) => {
                       const value = row[column.id];
                       return (

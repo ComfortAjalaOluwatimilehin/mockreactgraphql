@@ -60,3 +60,9 @@ export interface InitalState{
   students:Student[],
   currentPage:PageState
 }
+
+
+export enum STUDENT_TABLE_LABELS{
+
+  
+}
