@@ -26,13 +26,16 @@ export enum PageState {
   DELETE = "DEL",
 }
 
-export interface IStudentsProps {}
+export interface IStudentsProps {
+  rows:any[]
+  columns:any[]
+}
 export interface IStudentProps {}
 export interface FormProps {}
 
 export enum ACTIONS {
   ADD = "add",
-  UPDATE = "update",
+  UPDATE_STUDENTS = "updateStudents",
   REMOVE = "remove",
   CHANGE_PAGE = "changepage",
 }
@@ -46,8 +49,14 @@ export interface TableColumn {
 }
 
 export enum GRAPHQL_HANDLERS {
-  FETCH = "FETCH::STUDENTS",
-  DELETE = "DELETE::STUDENTS",
-  ADD = "ADD::STUDENTS",
-  UPDATE = "UPDATE::STUDENTS",
+  FETCH = "GET_STUDENTS",
+  DELETE = "DELETE_STUDENTS",
+  ADD = "ADD_STUDENTS",
+  UPDATE = "UPDATE_STUDENTS",
+}
+
+
+export interface InitalState{
+  students:Student[],
+  currentPage:PageState
 }

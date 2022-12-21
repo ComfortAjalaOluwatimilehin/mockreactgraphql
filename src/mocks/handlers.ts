@@ -3,9 +3,8 @@ import { GRAPHQL_HANDLERS } from "../types/interfaces";
 import { db } from "./db";
 
 export const handlers = [
-  graphql.mutation(
+  graphql.query(
     GRAPHQL_HANDLERS.FETCH, (req, res, ctx) => {
-  
     return res(
       ctx.data({
        students: db.student.getAll()

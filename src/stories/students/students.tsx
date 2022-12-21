@@ -10,9 +10,7 @@ import
   } from "@mui/material";
 import { IStudentsProps } from "../../types/interfaces";
 
-export const Students: React.FC<IStudentsProps> = (props) => {
-  const rows:any[] = []
-  const columns : any[] =[]
+export const Students: React.FC<IStudentsProps> = ({rows, columns}) => {
   return (
     <div className="container">
       <Paper sx={{ width: "100%", overflow: "hidden" }}>

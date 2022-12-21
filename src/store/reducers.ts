@@ -1,4 +1,7 @@
-export const addStudent = () => {}
-export const removeStudent = () => {}
-export const updateStudent = () => {}
-export const changePage  = () => {}
+
+export const update = (state:any, action:any) => {
+    state.students = action.payload?.students;
+}
+export const changePage = (state:any, action:any) => {
+    state.currentPage = action.payload?.currentPage;
+}

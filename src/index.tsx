@@ -1,23 +1,31 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import { Provider } from 'react-redux';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
-import store from './store/store';
+import { ApolloClient, InMemoryCache } from "@apollo/client";
+import { ApolloProvider } from "@apollo/client/react";
+import React from "react";
+import ReactDOM from "react-dom/client";
+import { Provider } from "react-redux";
+import App from "./App";
+import reportWebVitals from "./reportWebVitals";
+import store from "./store/store";
 
-if (process.env.NODE_ENV === 'development') {
-  const { worker } = require('./mocks/browser')
-  worker.start()
+if (process.env.NODE_ENV === "development") {
+  const { worker } = require("./mocks/browser");
+  worker.start();
 }
-console.log(process.env.NODE_ENV)
+const client = new ApolloClient({
+  uri: "/",
+  cache: new InMemoryCache(),
+});
+
 const root = ReactDOM.createRoot(
-  document.getElementById('root') as HTMLElement
+  document.getElementById("root") as HTMLElement
 );
 root.render(
   <React.StrictMode>
-    <Provider store={store}>
-       <App/>
+    <ApolloProvider client={client}>
+      <Provider store={store}>
+        <App />
       </Provider>
+    </ApolloProvider>
   </React.StrictMode>
 );
 
