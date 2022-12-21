@@ -1,24 +1,19 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
-
+import { useSelector } from 'react-redux/es/exports';
+import { Form } from './stories/form/form';
+import { Student } from './stories/student/student';
+import { Students } from './stories/students/students';
+import { PageState } from './types/interfaces';
 function App() {
+  const currentPage : PageState = useSelector((state:any) => state.page)
+  const mapper : any = {
+
+    [PageState.LIST] : <Students />,
+    [PageState.DETAILS]: <Student/>,
+    [PageState.FORM] : <Form />
+  }
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      {mapper[currentPage]}
     </div>
   );
 }
