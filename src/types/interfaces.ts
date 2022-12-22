@@ -1,4 +1,4 @@
-export interface Student {
+export interface IStudent {
   id: number | string;
   firstName: string;
   lastName: string;
@@ -8,9 +8,9 @@ export interface Student {
 }
 
 export enum Status {
-  EXPELLED = "EXP",
-  GRADUATED = "GRAD",
-  ENROLLED = "ENR",
+  EXP="EXPELLED",
+  GRAD="GRADUATED",
+  ENR="ENROLLED"
 }
 
 export enum Gender {
@@ -29,15 +29,25 @@ export enum PageState {
 export interface IStudentsProps {
   rows:any[]
   columns:any[]
+  onSelect:(student:IStudent) => any
 }
-export interface IStudentProps {}
-export interface FormProps {}
+export interface IStudentProps {
+  student?:IStudent;
+  onGoBack:() => any;
+  onEdit:() => any;
+  onDelete:() => any
+}
+export interface FormProps {
+  student?:IStudent;
+  onSave:(student:Partial<IStudent>) => any
+}
 
 export enum ACTIONS {
   ADD = "add",
   UPDATE_STUDENTS = "updateStudents",
   REMOVE = "remove",
-  CHANGE_PAGE = "changepage",
+  CHANGE_PAGE = "changePage",
+  SET_STUDENT="setActiveStudent"
 }
 
 export interface TableColumn {
@@ -51,14 +61,14 @@ export interface TableColumn {
 export enum GRAPHQL_HANDLERS {
   FETCH = "GET_STUDENTS",
   DELETE = "DELETE_STUDENTS",
-  ADD = "ADD_STUDENTS",
   UPDATE = "UPDATE_STUDENTS",
 }
 
 
 export interface InitalState{
-  students:Student[],
-  currentPage:PageState
+  students:IStudent[],
+  currentPage:PageState,
+  student:IStudent
 }
 
 

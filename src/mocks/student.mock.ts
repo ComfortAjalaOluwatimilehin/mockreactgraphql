@@ -1,10 +1,10 @@
-import { Gender, Status, Student } from "../types/interfaces";
+import { Gender, IStudent, Status } from "../types/interfaces";
 
-export const studentMock: Student = {
+export const studentMock: IStudent = {
   id:"1",
   age: 10,
   firstName: "Messi",
   gender: Gender.BOY,
   lastName: "Kendy",
-  status: Status.ENROLLED,
+  status: Status.ENR,
 };

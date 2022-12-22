@@ -1,16 +1,18 @@
 import { createSlice } from '@reduxjs/toolkit';
 import { ACTIONS, PageState } from './../types/interfaces';
-import { changePage, update } from './reducers';
+import { changepage, setstudent, update } from './reducers';
 
 export const studentsSlice = createSlice({
   name: 'appState',
   initialState: {
     currentPage:PageState.LIST,
-    students:[]
+    students:[],
+    student:undefined
   },
   reducers: {
     [ACTIONS.UPDATE_STUDENTS]:update,
-    [ACTIONS.CHANGE_PAGE]:changePage
+    [ACTIONS.CHANGE_PAGE]:changepage,
+    [ACTIONS.SET_STUDENT]: setstudent
   },
 })
 
@@ -18,6 +20,6 @@ export const studentsSlice = createSlice({
 
 
 // Action creators are generated for each case reducer function
-export const {updateStudents, changepage } = studentsSlice.actions
+export const {updateStudents, changePage, setActiveStudent} = studentsSlice.actions
 
 export default studentsSlice.reducer

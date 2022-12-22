@@ -1,7 +1,12 @@
 
 export const update = (state:any, action:any) => {
-    state.students = action.payload?.students;
+    const students = action.payload?.students || []
+    state.students = [...students]
 }
-export const changePage = (state:any, action:any) => {
-    state.currentPage = action.payload?.currentPage;
+export const changepage = (state:any, action:any) => {
+    state.currentPage = action.payload;
+}
+
+export const setstudent = (state:any, action:any) => {
+    state.student = action.payload?.student;
 }

@@ -1,11 +1,11 @@
-import { Gender, Status, Student } from "./../types/interfaces";
-export const studentsMock: Array<Student> = [
+import { Gender, IStudent, Status } from "./../types/interfaces";
+export const studentsMock: Array<IStudent> = [
   {
     id: 1,
     firstName: "Tammi",
     lastName: "Vernalls",
     gender: Gender.BOY,
-    status: Status.ENROLLED,
+    status: Status.ENR,
     age: 71,
   },
   {
@@ -13,7 +13,7 @@ export const studentsMock: Array<Student> = [
     firstName: "Rebbecca",
     lastName: "Fairlie",
     gender: Gender.OTHER,
-    status: Status.ENROLLED,
+    status: Status.ENR,
     age: 36,
   },
   {
@@ -21,7 +21,7 @@ export const studentsMock: Array<Student> = [
     firstName: "Lind",
     lastName: "Held",
     gender: Gender.BOY,
-    status: Status.GRADUATED,
+    status: Status.GRAD,
     age: 9,
   },
   {
@@ -29,7 +29,7 @@ export const studentsMock: Array<Student> = [
     firstName: "Suzette",
     lastName: "Waitland",
     gender: Gender.OTHER,
-    status: Status.EXPELLED,
+    status: Status.EXP,
     age: 8,
   },
   {
@@ -37,7 +37,7 @@ export const studentsMock: Array<Student> = [
     firstName: "Quinta",
     lastName: "Gotch",
     gender: Gender.OTHER,
-    status: Status.EXPELLED,
+    status: Status.EXP,
     age: 69,
   },
   {
@@ -45,7 +45,7 @@ export const studentsMock: Array<Student> = [
     firstName: "Rochella",
     lastName: "Darnbrough",
     gender: Gender.OTHER,
-    status: Status.EXPELLED,
+    status: Status.EXP,
     age: 93,
   },
   {
@@ -53,7 +53,7 @@ export const studentsMock: Array<Student> = [
     firstName: "Towney",
     lastName: "Durrans",
     gender: Gender.GIRL,
-    status: Status.EXPELLED,
+    status: Status.EXP,
     age: 79,
   },
   {
@@ -61,7 +61,7 @@ export const studentsMock: Array<Student> = [
     firstName: "Averell",
     lastName: "Naish",
     gender: Gender.OTHER,
-    status: Status.GRADUATED,
+    status: Status.GRAD,
     age: 84,
   },
   {
@@ -69,7 +69,7 @@ export const studentsMock: Array<Student> = [
     firstName: "Sheila-kathryn",
     lastName: "Guirardin",
     gender: Gender.OTHER,
-    status: Status.GRADUATED,
+    status: Status.GRAD,
     age: 18,
   },
   {
@@ -77,7 +77,7 @@ export const studentsMock: Array<Student> = [
     firstName: "Arnaldo",
     lastName: "M'Chirrie",
     gender: Gender.GIRL,
-    status: Status.ENROLLED,
+    status: Status.ENR,
     age: 97,
   },
   {
@@ -85,7 +85,7 @@ export const studentsMock: Array<Student> = [
     firstName: "Patrizius",
     lastName: "Bolderstone",
     gender: Gender.OTHER,
-    status: Status.ENROLLED,
+    status: Status.ENR,
     age: 54,
   },
   {
@@ -93,7 +93,7 @@ export const studentsMock: Array<Student> = [
     firstName: "Aggie",
     lastName: "Luckey",
     gender: Gender.GIRL,
-    status: Status.ENROLLED,
+    status: Status.ENR,
     age: 33,
   },
   {
@@ -101,7 +101,7 @@ export const studentsMock: Array<Student> = [
     firstName: "Amity",
     lastName: "Bearcroft",
     gender: Gender.OTHER,
-    status: Status.EXPELLED,
+    status: Status.EXP,
     age: 1,
   },
   {
@@ -109,7 +109,7 @@ export const studentsMock: Array<Student> = [
     firstName: "Jasper",
     lastName: "Sinton",
     gender: Gender.BOY,
-    status: Status.EXPELLED,
+    status: Status.EXP,
     age: 79,
   },
   {
@@ -117,7 +117,7 @@ export const studentsMock: Array<Student> = [
     firstName: "Ulrika",
     lastName: "Alsina",
     gender: Gender.GIRL,
-    status: Status.EXPELLED,
+    status: Status.EXP,
     age: 35,
   },
   {
@@ -125,7 +125,7 @@ export const studentsMock: Array<Student> = [
     firstName: "Jervis",
     lastName: "Coldham",
     gender: Gender.BOY,
-    status: Status.GRADUATED,
+    status: Status.GRAD,
     age: 62,
   },
   {
@@ -133,7 +133,7 @@ export const studentsMock: Array<Student> = [
     firstName: "Northrup",
     lastName: "Hellicar",
     gender: Gender.OTHER,
-    status: Status.GRADUATED,
+    status: Status.GRAD,
     age: 59,
   },
   {
@@ -141,7 +141,7 @@ export const studentsMock: Array<Student> = [
     firstName: "Jobie",
     lastName: "Whittick",
     gender: Gender.GIRL,
-    status: Status.ENROLLED,
+    status: Status.ENR,
     age: 33,
   },
   {
@@ -149,7 +149,7 @@ export const studentsMock: Array<Student> = [
     firstName: "Henry",
     lastName: "Esslemont",
     gender: Gender.BOY,
-    status: Status.ENROLLED,
+    status: Status.ENR,
     age: 45,
   },
   {
@@ -157,7 +157,7 @@ export const studentsMock: Array<Student> = [
     firstName: "Doretta",
     lastName: "Parnell",
     gender: Gender.GIRL,
-    status: Status.EXPELLED,
+    status: Status.EXP,
     age: 24,
   },
   {
@@ -165,7 +165,7 @@ export const studentsMock: Array<Student> = [
     firstName: "Wood",
     lastName: "Lelliott",
     gender: Gender.OTHER,
-    status: Status.ENROLLED,
+    status: Status.ENR,
     age: 19,
   },
   {
@@ -173,7 +173,7 @@ export const studentsMock: Array<Student> = [
     firstName: "Simone",
     lastName: "Coppens",
     gender: Gender.OTHER,
-    status: Status.ENROLLED,
+    status: Status.ENR,
     age: 37,
   },
   {
@@ -181,7 +181,7 @@ export const studentsMock: Array<Student> = [
     firstName: "Coralie",
     lastName: "Jiles",
     gender: Gender.BOY,
-    status: Status.EXPELLED,
+    status: Status.EXP,
     age: 51,
   },
   {
@@ -189,7 +189,7 @@ export const studentsMock: Array<Student> = [
     firstName: "Ruprecht",
     lastName: "Arter",
     gender: Gender.GIRL,
-    status: Status.ENROLLED,
+    status: Status.ENR,
     age: 54,
   },
   {
@@ -197,7 +197,7 @@ export const studentsMock: Array<Student> = [
     firstName: "Tamas",
     lastName: "Coundley",
     gender: Gender.BOY,
-    status: Status.ENROLLED,
+    status: Status.ENR,
     age: 97,
   },
   {
@@ -205,7 +205,7 @@ export const studentsMock: Array<Student> = [
     firstName: "Rowena",
     lastName: "Guyon",
     gender: Gender.OTHER,
-    status: Status.GRADUATED,
+    status: Status.GRAD,
     age: 44,
   },
   {
@@ -213,7 +213,7 @@ export const studentsMock: Array<Student> = [
     firstName: "Alida",
     lastName: "Heber",
     gender: Gender.BOY,
-    status: Status.ENROLLED,
+    status: Status.ENR,
     age: 79,
   },
   {
@@ -221,7 +221,7 @@ export const studentsMock: Array<Student> = [
     firstName: "Amberly",
     lastName: "Fer",
     gender: Gender.BOY,
-    status: Status.EXPELLED,
+    status: Status.EXP,
     age: 59,
   },
   {
@@ -229,7 +229,7 @@ export const studentsMock: Array<Student> = [
     firstName: "Kit",
     lastName: "Jeeks",
     gender: Gender.GIRL,
-    status: Status.GRADUATED,
+    status: Status.GRAD,
     age: 82,
   },
   {
@@ -237,7 +237,7 @@ export const studentsMock: Array<Student> = [
     firstName: "Bailey",
     lastName: "Weatherhill",
     gender: Gender.OTHER,
-    status: Status.ENROLLED,
+    status: Status.ENR,
     age: 43,
   },
   {
@@ -245,7 +245,7 @@ export const studentsMock: Array<Student> = [
     firstName: "Hailee",
     lastName: "Lengthorn",
     gender: Gender.OTHER,
-    status: Status.GRADUATED,
+    status: Status.GRAD,
     age: 79,
   },
   {
@@ -253,7 +253,7 @@ export const studentsMock: Array<Student> = [
     firstName: "Elwood",
     lastName: "Freiburger",
     gender: Gender.GIRL,
-    status: Status.ENROLLED,
+    status: Status.ENR,
     age: 13,
   },
   {
@@ -261,7 +261,7 @@ export const studentsMock: Array<Student> = [
     firstName: "Olav",
     lastName: "De Pero",
     gender: Gender.BOY,
-    status: Status.EXPELLED,
+    status: Status.EXP,
     age: 39,
   },
   {
@@ -269,7 +269,7 @@ export const studentsMock: Array<Student> = [
     firstName: "Ashla",
     lastName: "Christophers",
     gender: Gender.BOY,
-    status: Status.ENROLLED,
+    status: Status.ENR,
     age: 68,
   },
   {
@@ -277,7 +277,7 @@ export const studentsMock: Array<Student> = [
     firstName: "Katerine",
     lastName: "Freathy",
     gender: Gender.GIRL,
-    status: Status.GRADUATED,
+    status: Status.GRAD,
     age: 53,
   },
   {
@@ -285,7 +285,7 @@ export const studentsMock: Array<Student> = [
     firstName: "Adrianne",
     lastName: "Flintoff",
     gender: Gender.BOY,
-    status: Status.EXPELLED,
+    status: Status.EXP,
     age: 2,
   },
   {
@@ -293,7 +293,7 @@ export const studentsMock: Array<Student> = [
     firstName: "Cosette",
     lastName: "Burdess",
     gender: Gender.GIRL,
-    status: Status.ENROLLED,
+    status: Status.ENR,
     age: 80,
   },
   {
@@ -301,7 +301,7 @@ export const studentsMock: Array<Student> = [
     firstName: "Mord",
     lastName: "Oles",
     gender: Gender.OTHER,
-    status: Status.ENROLLED,
+    status: Status.ENR,
     age: 50,
   },
   {
@@ -309,7 +309,7 @@ export const studentsMock: Array<Student> = [
     firstName: "Case",
     lastName: "Lanfranchi",
     gender: Gender.GIRL,
-    status: Status.GRADUATED,
+    status: Status.GRAD,
     age: 34,
   },
   {
@@ -317,7 +317,7 @@ export const studentsMock: Array<Student> = [
     firstName: "Mildred",
     lastName: "Fonte",
     gender: Gender.BOY,
-    status: Status.ENROLLED,
+    status: Status.ENR,
     age: 51,
   },
   {
@@ -325,7 +325,7 @@ export const studentsMock: Array<Student> = [
     firstName: "Carey",
     lastName: "O'Scollain",
     gender: Gender.OTHER,
-    status: Status.EXPELLED,
+    status: Status.EXP,
     age: 84,
   },
   {
@@ -333,7 +333,7 @@ export const studentsMock: Array<Student> = [
     firstName: "Kristopher",
     lastName: "Demicoli",
     gender: Gender.OTHER,
-    status: Status.ENROLLED,
+    status: Status.ENR,
     age: 78,
   },
   {
@@ -341,7 +341,7 @@ export const studentsMock: Array<Student> = [
     firstName: "Lilyan",
     lastName: "Prover",
     gender: Gender.GIRL,
-    status: Status.GRADUATED,
+    status: Status.GRAD,
     age: 35,
   },
   {
@@ -349,7 +349,7 @@ export const studentsMock: Array<Student> = [
     firstName: "Rodney",
     lastName: "Bruinemann",
     gender: Gender.OTHER,
-    status: Status.EXPELLED,
+    status: Status.EXP,
     age: 72,
   },
   {
@@ -357,7 +357,7 @@ export const studentsMock: Array<Student> = [
     firstName: "Avery",
     lastName: "Dirand",
     gender: Gender.BOY,
-    status: Status.GRADUATED,
+    status: Status.GRAD,
     age: 57,
   },
   {
@@ -365,7 +365,7 @@ export const studentsMock: Array<Student> = [
     firstName: "Dido",
     lastName: "Summers",
     gender: Gender.GIRL,
-    status: Status.GRADUATED,
+    status: Status.GRAD,
     age: 80,
   },
   {
@@ -373,7 +373,7 @@ export const studentsMock: Array<Student> = [
     firstName: "Jeanna",
     lastName: "Hargraves",
     gender: Gender.GIRL,
-    status: Status.EXPELLED,
+    status: Status.EXP,
     age: 52,
   },
   {
@@ -381,7 +381,7 @@ export const studentsMock: Array<Student> = [
     firstName: "Westbrooke",
     lastName: "Toth",
     gender: Gender.OTHER,
-    status: Status.EXPELLED,
+    status: Status.EXP,
     age: 68,
   },
   {
@@ -389,7 +389,7 @@ export const studentsMock: Array<Student> = [
     firstName: "Ashil",
     lastName: "Freebury",
     gender: Gender.BOY,
-    status: Status.ENROLLED,
+    status: Status.ENR,
     age: 46,
   },
   {
@@ -397,7 +397,7 @@ export const studentsMock: Array<Student> = [
     firstName: "Cully",
     lastName: "Saffell",
     gender: Gender.GIRL,
-    status: Status.EXPELLED,
+    status: Status.EXP,
     age: 63,
   },
 ];
