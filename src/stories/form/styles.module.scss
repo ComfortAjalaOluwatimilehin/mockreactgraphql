@@ -3,5 +3,7 @@
     box-sizing: border-box;
 }
 .form-control{
-    margin-bottom:10px;
+    margin-bottom:10px !important;
+    margin-top:10px !important;
+    display:block !important;
 }

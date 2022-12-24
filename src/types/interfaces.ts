@@ -23,7 +23,6 @@ export enum PageState {
   LIST = "L",
   DETAILS = "D",
   FORM = "F",
-  DELETE = "DEL",
 }
 
 export interface IStudentsProps {
@@ -40,6 +39,7 @@ export interface IStudentProps {
 export interface FormProps {
   student?:IStudent;
   onSave:(student:Partial<IStudent>) => any
+  onGoBack:() => any;
 }
 
 export enum ACTIONS {

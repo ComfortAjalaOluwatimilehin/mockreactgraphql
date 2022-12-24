@@ -17,13 +17,13 @@ export const Students: React.FC<IStudentsProps> = ({ rows, columns, onSelect}) =
     <div className={styles["container"]}>
       {rows.length > 0 && (
         <>
-          <Typography variant="h4" component="h4">
+          <Typography variant="h4" component="h4" className={styles["headline"]}>
             Students
           </Typography>
-          <TableContainer sx={{ maxHeight: 440 }} component={Paper}>
+         <Paper> <TableContainer sx={{ maxHeight: 440 }} className={styles["table"]}>
             <Table sx={{ minWidth: 650 }}>
               <TableHead>
-                <TableRow>
+                <TableRow className={styles["header"]}>
                   {columns.map((column) => (
                     <TableCell
                       key={column.id}
@@ -47,6 +47,7 @@ export const Students: React.FC<IStudentsProps> = ({ rows, columns, onSelect}) =
                       onClick={(e) => {
                         onSelect(row)
                       }}  
+                      className={styles["row"]}
                     >
                       {columns.map((column) => {
                         const value = row[column.id];
@@ -61,7 +62,7 @@ export const Students: React.FC<IStudentsProps> = ({ rows, columns, onSelect}) =
                 })}
               </TableBody>
             </Table>
-          </TableContainer>
+          </TableContainer></Paper>
         </>
       )}
       {!rows.length && <><Skeleton /><Skeleton /><Skeleton /><Skeleton /><Skeleton /></>}

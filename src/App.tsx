@@ -18,13 +18,14 @@ import { Students } from "./stories/students/students";
 import { IStudent, PageState } from "./types/interfaces";
 function App() {
   const dispatch = useDispatch();
+  const [setStudent] = useMutation(SET_STUDENT);
+  const [deleteStudent] = useMutation(DELETE_STUDENT);
   const currentPage: PageState = useSelector(GET_CURRENT_PAGE);
   const { data: studentsResponse, refetch } = useQuery(GET_STUDENTS);
   const rows = useSelector(GET_ROWS);
   const columns = useSelector(GET_COLUMNS);
   const student = useSelector(GET_ACTIVE_STUDENT);
-  const [setStudent] = useMutation(SET_STUDENT);
-  const [deleteStudent] = useMutation(DELETE_STUDENT);
+
 
  /*** SAVE USER INPUTS AND CREATE NEW STUDENT OBJECT  */
   const onSave = (update: Partial<IStudent>) => {
@@ -63,6 +64,12 @@ function App() {
     dispatch(setActiveStudent({student:undefined} as any))
   };
 
+
+  /*** RETURN TO DETAILS */
+  const onGoBackToDetails = () => {
+    dispatch(changePage(PageState.DETAILS as any))
+  }
+
   /****  SET STUDENTS ON INITIAL RENDER   */
   useEffect(() => {
     if (studentsResponse) {
@@ -92,7 +99,7 @@ function App() {
       <Students rows={rows} columns={columns} onSelect={onSelect} />
     ),
     [PageState.DETAILS]: <Student student={student} onDelete={onDelete} onEdit={onEdit} onGoBack={onGoBack} />,
-    [PageState.FORM]: <StudentForm onSave={onSave} student={student} />,
+    [PageState.FORM]: <StudentForm onSave={onSave} student={student} onGoBack={onGoBackToDetails} />,
   };
   return <div className="App">{mapper[currentPage]}</div>;
 }

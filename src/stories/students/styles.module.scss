@@ -1,4 +1,25 @@
 .container{
-    width:80%;
+   width:100%;
+   display:flex;
+   justify-content: center;
+   align-items: center;
     margin:auto;
+    flex-direction: column;
+    background-color: #e7ebf0;
+    padding:20px;
+    box-sizing: border-box;
+}
+
+.headline{
+    text-align: center;
+    background:white;
+    margin-top:5px;
+}
+.table{
+    width:80%;
+    min-width: 400px;
+    background-color: white;
+}
+.row{
+    cursor: pointer;
 }
